@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget {
+  //variables
+  String textoTitulo;
+  int cantidadEstrellas;
+  String textoDescripcion;
+
+  DescriptionPlace(this.textoTitulo, this.cantidadEstrellas, this.textoDescripcion);
+
   @override
   Widget build(BuildContext context) {
     final titulo = Container(
@@ -8,7 +15,7 @@ class DescriptionPlace extends StatelessWidget {
         right: 20,
       ),
       child: Text(
-        "Duwili Ella",
+        textoTitulo,
         style: TextStyle(
             fontSize: 38,
             fontWeight: FontWeight.bold
@@ -33,14 +40,17 @@ class DescriptionPlace extends StatelessWidget {
         color: Colors.black54,
       ),
     );
+    //fila Estrellas
+    List<Container> estrellas = new List();
+    for(int i=0; i<5; i++){
+      if(i < cantidadEstrellas){
+        estrellas.add(estrella);
+      }else{
+        estrellas.add(estrellaBorde);
+      }
+    }
     final filaEstrellas = Row(
-      children: <Widget>[
-        estrella,
-        estrella,
-        estrella,
-        estrella,
-        estrellaBorde,
-      ],
+      children: estrellas,
     );
     final filaTitulo = Row(
       children: <Widget>[
@@ -53,7 +63,7 @@ class DescriptionPlace extends StatelessWidget {
           top: 10
       ),
       child: Text(
-        "Lorem Ipsum es simplemente texto de relleno de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto de relleno estándar de la industria desde la década de 1500, cuando un impresor desconocido tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas. Ha sobrevivido no solo a cinco siglos, sino también al salto a la composición tipográfica electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de hojas de Letraset que contenían pasajes de Lorem Ipsum y, más recientemente, con software de autoedición como Aldus PageMaker que incluía versiones de Lorem Ipsum.",
+        textoDescripcion,
         style: TextStyle(
             color: Colors.black54
         ),
