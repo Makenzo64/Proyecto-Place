@@ -3,6 +3,7 @@ import 'package:proyecto/review.dart';
 import 'package:proyecto/review_list.dart';
 
 import 'description_place.dart';
+import 'gradient_back.dart';
 
 class MyHome extends StatelessWidget {
   @override
@@ -32,14 +33,9 @@ class MyHome extends StatelessWidget {
       ],
     );
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            "My Places"
-        ),
-      ),
       body: Stack(
         children: <Widget>[
-          listView
+          GradientBack()
         ],
       ),
     );
