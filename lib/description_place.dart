@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class DescriptionPlace extends StatelessWidget {
   //variables
   String textoTitulo;
