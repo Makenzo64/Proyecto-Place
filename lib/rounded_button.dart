@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-class RoundedButton extends StatelessWidget{
+class RoundedButton extends StatelessWidget {
   String textoBoton;
 
   RoundedButton(this.textoBoton);
-  @override
   Widget build(BuildContext context) {
-    //boton
     final roundedButton = InkWell(
       child: Container(
         height: 50,
@@ -23,8 +21,9 @@ class RoundedButton extends StatelessWidget{
             ],
             begin: FractionalOffset(0.0, 0.5),
             end: FractionalOffset(1.0, 0.5),
-            stops: [0.0, 0.5],
+            stops: [0.0, 0,5],
             tileMode: TileMode.clamp
+
           )
         ),
         child: Center(
@@ -41,11 +40,12 @@ class RoundedButton extends StatelessWidget{
       ),
       onTap: (){
         Scaffold.of(context).showSnackBar(
-          SnackBar(content: Text("Navegando...")),
+          SnackBar(
+              content:Text ("Navegando..."),
+          )
         );
       },
     );
     return roundedButton;
   }
-
 }
